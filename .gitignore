@@ -1,3 +1,7 @@
+.idea
+
+.mvn
+
 .vscode/
 
 *.class
