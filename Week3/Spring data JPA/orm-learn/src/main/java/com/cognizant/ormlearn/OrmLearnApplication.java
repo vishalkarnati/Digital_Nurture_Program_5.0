@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 public class OrmLearnApplication {
@@ -26,6 +27,8 @@ public class OrmLearnApplication {
         countryService = context.getBean(CountryService.class);
 
         testGetAllCountries();
+
+        testGetCountryById();
     }
 
     private static void testGetAllCountries() {
@@ -37,5 +40,11 @@ public class OrmLearnApplication {
         LOGGER.debug("Countries = {}", countries);
 
         LOGGER.info("End");
+    }
+
+    private static void testGetCountryById(){
+        Optional<Country> country = countryService.getCountryById("IN");
+
+        LOGGER.debug(String.valueOf(country));
     }
 }

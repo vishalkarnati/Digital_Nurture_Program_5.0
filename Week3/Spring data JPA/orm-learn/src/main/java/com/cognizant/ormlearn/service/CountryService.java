@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CountryService {
@@ -17,6 +18,10 @@ public class CountryService {
     @Transactional
     public List<Country> getAllCountries() {
         return countryRepository.findAll();
+    }
+
+    public Optional<Country> getCountryById(String id){
+        return countryRepository.findById(id);
     }
 
 }
