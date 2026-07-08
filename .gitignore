@@ -5,3 +5,5 @@
 .vscode/
 
 *.class
+
+application.properties
